@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인/회원가입</title>
+  <link rel="stylesheet" href="style.css"> <!-- CSS 연결 -->
+</head>
+<body>
+  <!-- 로그인 폼 -->
+  <form id="loginForm">
+    <h2>로그인</h2>
+    <input type="email" placeholder="이메일" name="email" required />
+    <input type="password" placeholder="비밀번호" name="password" required />
+    <button type="submit">로그인</button>
+    <p>
+      <a href="#" id="showSignup">회원가입</a> | 
+      <a href="#" id="showFind">아이디/비밀번호 찾기</a>
+    </p>
+  </form>
+
+  <!-- 아이디/비밀번호 찾기 선택 창 -->
+<div id="findMenu" style="display: none;">
+    <h2>아이디/비밀번호 찾기</h2>
+    <button id="goToFindId">아이디 찾기</button>
+    <button id="goToFindPw">비밀번호 찾기</button>
+    <p><a href="#" id="backToLoginFromMenu">로그인으로 돌아가기</a></p>
+  </div>
+  
+  <!-- 회원가입 폼 -->
+  <form id="signupForm" style="display: none;">
+    <h2>회원가입</h2>
+    <input type="text" placeholder="이름" name="name" required />
+    <div>
+      <input type="text" placeholder="전화번호" name="phone" required />
+      <select name="telecom" required>
+        <option value="SKT">SKT</option>
+        <option value="KT">KT</option>
+        <option value="LGU+">LGU+</option>
+      </select>
+      <button type="button" id="requestVerification">인증요청</button>
+    </div>
+    <div>
+      <input type="text" placeholder="인증번호 입력" name="verificationCode" required />
+      <button type="button" id="verifyCode">인증확인</button>
+    </div>
+    <input type="password" placeholder="비밀번호" name="password" required />
+    <input type="password" placeholder="비밀번호 재확인" name="passwordConfirm" required />
+    <button type="submit">회원가입</button>
+    <p><a href="#" id="backToLogin">로그인으로 돌아가기</a></p>
+  </form>
+
+  <!-- 아이디 찾기 폼 -->
+  <form id="findForm" style="display: none;">
+    <h2>아이디 찾기</h2>
+    <div>
+      <input type="text" placeholder="전화번호" name="phone" required />
+      <select name="telecom" required>
+        <option value="SKT">SKT</option>
+        <option value="KT">KT</option>
+        <option value="LGU+">LGU+</option>
+      </select>
+      <button type="button" id="requestIdVerification">인증요청</button>
+    </div>
+    <div>
+      <input type="text" placeholder="인증번호 입력" name="verificationCode" required />
+      <button type="button" id="verifyIdCode">인증확인</button>
+    </div>
+    <button type="submit">아이디 찾기</button>
+    <p><a href="#" id="backToLoginFromFind">로그인으로 돌아가기</a></p>
+  </form>
+
+  <!-- 비밀번호 찾기 폼 -->
+  <form id="resetForm" style="display: none;">
+    <h2>비밀번호 찾기</h2>
+    <input type="text" placeholder="전화번호" name="phone" required />
+    <input type="text" placeholder="아이디 입력" name="userId" required />
+    <button type="button" id="requestPwReset">인증요청</button>
+    <div style="display: none;" id="newPasswordSection">
+      <input type="password" placeholder="새 비밀번호" name="newPassword" required />
+      <input type="password" placeholder="새 비밀번호 재입력" name="newPasswordConfirm" required />
+      <button type="submit">비밀번호 재설정</button>
+    </div>
+    <p><a href="#" id="backToLoginFromReset">로그인으로 돌아가기</a></p>
+  </form>
+
+  <script src="script.js"></script> <!-- JS 연결 -->
+</body>
+</html>
+<link rel="stylesheet" href="../style.css/style.css"> <!-- CSS 연결 -->
+<script src="../script.js/script.js"></script> <!-- JS 연결 -->
